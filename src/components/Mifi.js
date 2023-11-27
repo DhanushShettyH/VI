@@ -35,7 +35,11 @@ export default function Mifi() {
             key={i}
             className={`flex flex-col items-center space-y-3 pr-16 ${item.border}`}
           >
-            <img src={item.img} alt={i} />
+            <img
+              src={item.img}
+              alt={i}
+              className="hover:rotate-180 hover:scale-[1.1] hover:box- transition-all duration-300 ease-out"
+            />
             <pre>{item.title}</pre>
           </div>
         ))}

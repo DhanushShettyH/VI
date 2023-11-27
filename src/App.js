@@ -10,10 +10,16 @@ import Download from "./Download";
 import Footer from "./components/Footer";
 import Sideheader from "./components/Sideheader";
 import React, { useState, useEffect, useRef } from "react";
+import { Avatar, Button, Card } from "@material-tailwind/react";
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
+  const [cookieBtn, setcookieBtn] = useState(false);
   const observer = useRef(null);
+
+  const handleclick = () => {
+    setcookieBtn(true);
+  };
 
   useEffect(() => {
     //create new instance and pass a callback function
@@ -61,6 +67,31 @@ function App() {
       <div className=" h-20 w-20 fixed z-50 right-[4%] bottom-[4%]">
         <img src="./vic.svg" alt="1" />
       </div>
+      <Card
+        className={`${
+          cookieBtn === true ? " invisible" : "visible"
+        } rounded-full h-20 w-[500px] gap-6 flex flex-row fixed z-50 right-[30%] bottom-[4%] items-center justify-center`}
+      >
+        <div>
+          <Avatar src="./cookie.png" alt="avatar" className="p-0.5" />{" "}
+        </div>
+        <div>
+          <p>
+            We are Providing you this sweet
+            <br />
+            experience by using cookies
+          </p>
+        </div>
+        <div>
+          <Button
+            color="red"
+            className=" rounded-full animate-btn-popup hover:animate-none"
+            onClick={handleclick}
+          >
+            okay,thanks
+          </Button>
+        </div>
+      </Card>
 
       {/* Hero */}
       <section id="hero" className="z-50 sections mb-[800px]  snap-center">

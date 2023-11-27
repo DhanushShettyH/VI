@@ -107,7 +107,7 @@ export default function Planes() {
                 key={i}
               >
                 <div className=" w-full border-b-2 border-[#8f909ed5] pl-5 pr-5 space-y-3">
-                  {card.plane}
+                  <b>{card.plane}</b>
                   <br />
                   &#8377;{card.amount}/month
                   <br />
